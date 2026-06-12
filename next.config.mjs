@@ -4,7 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/atividade_cep_pweb2', 
+
+  basePath: '/atividade_cep_pweb2',
+  assetPrefix: '/atividade_cep_pweb2',
 };
 
 export default nextConfig;

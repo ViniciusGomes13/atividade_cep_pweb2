@@ -3,7 +3,7 @@ import './style.css';
 
 import { useState, useRef, ChangeEvent } from 'react';
 
-// 1. Tipagens declaradas diretamente aqui (sem importá-las)
+// Tipagens declaradas diretamente aqui
 interface ViaCepResponse {
   logradouro: string;
   bairro: string;
@@ -22,7 +22,7 @@ interface AddressForm {
 }
 
 export default function AddressPage() {
-  // 2. Estados para gerenciar os dados e a interface
+  // Estados para gerenciar os dados e a interface
   const [formData, setFormData] = useState<AddressForm>({
     cep: '',
     street: '',
@@ -35,10 +35,9 @@ export default function AddressPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
 
-  // Ref para focar no campo de número após preencher o CEP
   const numberInputRef = useRef<HTMLInputElement>(null);
 
-  // 3. Atualiza os campos do formulário conforme o usuário digita
+  // Atualiza os campos do formulário conforme o usuário digita
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -63,7 +62,7 @@ export default function AddressPage() {
     }
   };
 
-  // 4. Função que busca os dados na API
+  // Função que busca os dados na API
   const loadCepInfo = async (cep: string) => {
     setIsLoading(true);
     setHasError(false);

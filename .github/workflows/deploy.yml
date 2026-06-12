@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: github/pages-deploy-action@v4
+        uses: actions/deploy-pages@v4
         with:
           branch: gh-pages # Onde os arquivos estáticos compilados vão morar
           folder: out # Pasta que o Next.js gerou no passo anterior
